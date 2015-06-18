@@ -2,6 +2,17 @@
 var String = require('./../lib/String');
 var batch = require('./../testutil').batch;
 
+exports.testIsEmpty = function testIsEmpty(test) {
+
+    // Batch
+    batch(test, [""], [4, true, null, "H", " AA", " "], String.isEmpty);
+    batch(test, ["z", " ", "5"], [4, true, null, ""], String.isNotEmpty);
+    batch(test, ["z", "5"], [4, true, null, "", " ", "\n", "\r", "\t"], String.isNotEmptyOrWhitespace);
+
+    // Done
+    test.done();
+};
+
 exports.testIsHex = function testIsHex(test) {
 
     // Alias
