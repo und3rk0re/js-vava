@@ -1,0 +1,16 @@
+{
+  "name": "vava",
+  "description": "NodeJS variable validator",
+  "version": "0.1.0",
+  "author": "Und3rk0re <und3rk0re@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "validation", "validator"
+  ],
+  "scripts": {
+  },
+  "files": [
+    "index.js",
+    "lib/"
+  ]
+}
