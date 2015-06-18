@@ -24,15 +24,21 @@ function updateUserName(id, name)
 $ npm install vava
 ```  
   
-## Bundles assertions
+## Bundled assertions
   
-* isInt
-* isFloat
-* isBoolean
-* isNull
-* isArray
-* isNotEmptyArray
-* isNumber
+* Type.isNumber
+* Type.isInt
+* Type.isFloat
+* Type.isBoolean
+* Type.isNull
+* Type.isFunction
+* Type.isArray
+* Type.isNotEmptyArray
+* Net.isIp
+* Net.isIpv4
+* Net.isIpv6
+* String.isHexadecimal
+* String.isJson
   
   
 [npm-image]: https://img.shields.io/npm/v/vava.svg
