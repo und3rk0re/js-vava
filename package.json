@@ -1,16 +1,22 @@
 {
   "name": "vava",
   "description": "NodeJS variable validator",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Und3rk0re <und3rk0re@gmail.com>",
   "license": "MIT",
   "keywords": [
-    "validation", "validator"
+    "validation",
+    "validator"
   ],
-  "scripts": {
-  },
+  "scripts": {},
   "files": [
     "index.js",
     "lib/"
-  ]
+  ],
+  "devDependencies": {
+    "nodeunit": "^0.9.1"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/nodeunit test/"
+  }
 }
