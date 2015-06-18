@@ -8,7 +8,10 @@
     "validation",
     "validator"
   ],
-  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/und3rk0re/js-vava.git"
+  },
   "files": [
     "index.js",
     "lib/"
