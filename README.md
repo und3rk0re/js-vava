@@ -2,6 +2,7 @@
 Simple, clean and efficient variable validator for [node](http://nodejs.org).
 
 [![NPM Version][npm-image]][npm-url]
+[![Build status][travis-image]][travis-url]
   
 ```js
 
@@ -36,3 +37,5 @@ $ npm install vava
   
 [npm-image]: https://img.shields.io/npm/v/vava.svg
 [npm-url]: https://npmjs.org/package/vava
+[travis-image]: https://travis-ci.org/und3rk0re/js-vava.svg
+[travis-url]: https://travis-ci.org/und3rk0re/js-vava
