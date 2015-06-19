@@ -33,7 +33,7 @@ function updateUserName(id, name)
 }
 ```
 
-Shortest syntax - container by iteself is instance of `Check.Is` method
+Shortest syntax - container by itself is instance of `Check.Is` method
 
 ```js
 var Vava = require('vava');
@@ -56,18 +56,18 @@ $ npm install vava
   
 ## Bundled assertions
   
-* Type.is[]Number
-* Type.isInt
-* Type.isFloat
-* Type.isBoolean
-* Type.isNull
-* Type.isFunction
-* Type.isArray
+* Type.is[Not]Number
+* Type.is[Not]Integer
+* Type.is[Not]Float
+* Type.is[Not]Boolean
+* Type.is[Not]Null
+* Type.is[Not]Function
+* Type.is[Not]Array
 * Type.isNotEmptyArray
 * Net.isIp
 * Net.isIpv4
 * Net.isIpv6
-* String.isEmpty
+* String.is[Not]Empty
 * String.isNotEmptyOrWhitespace
 * String.isHexadecimal
 * String.isJson
