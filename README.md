@@ -71,6 +71,10 @@ $ npm install vava
 * String.isNotEmptyOrWhitespace
 * String.isHexadecimal
 * String.isJson
+* String.isAscii[OrEmpty]
+* String.isMultibyte[OrEmpty]
+* String.withExactLength(length)
+* String.withLength(max[, min])
   
   
 [npm-image]: https://img.shields.io/npm/v/vava.svg

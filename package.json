@@ -1,7 +1,7 @@
 {
   "name": "vava",
   "description": "NodeJS variable validator",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": "Und3rk0re <und3rk0re@gmail.com>",
   "license": "MIT",
   "keywords": [
