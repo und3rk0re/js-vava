@@ -2,6 +2,17 @@
 var Type = require('./../lib/Type');
 var batch = require('./../testutil').batch;
 
+exports.testEqualsTo = function testEqualsTo(test) {
+
+    // Batch
+    batch(test, [5], [true, false, 0, 0.1, "", {}, "5", null], Type.equalsTo(5));
+    batch(test, ["5"], [true, false, 0, 0.1, "", {}, 5, null], Type.equalsTo("5"));
+    batch(test, [null], [true, false, 0, 0.1, "", {}, "5"], Type.equalsTo(null));
+
+    // Done
+    test.done();
+};
+
 exports.testNulls = function testNulls(test) {
 
     // Batch
