@@ -13,6 +13,62 @@ exports.testIsEmpty = function testIsEmpty(test) {
     test.done();
 };
 
+exports.testIsUuid = function testIsUuid(test) {
+
+    // Batch
+    batch(
+        test,
+        [
+            "e882f056-1920-11e5-b60b-1697f925ec7b", // v1
+            "1546058f-5a25-3334-85ae-e68f2a44bbaf", // v3
+            "d1a85062-05f8-4bbf-9bf8-ea437629a7db", // v4
+            "1546058f-5a25-5334-85ae-e68f2a44bbaf"  // v5
+        ],
+        [
+        ],
+        String.isUuid
+    );
+    batch(
+        test,
+        [
+            "1546058f-5a25-3334-85ae-e68f2a44bbaf"  // v3
+        ],
+        [
+            "e882f056-1920-11e5-b60b-1697f925ec7b", // v1
+            "d1a85062-05f8-4bbf-9bf8-ea437629a7db", // v4
+            "1546058f-5a25-4334-85ae-e68f2a44bbaf"  // v5
+        ],
+        String.isUuid3
+    );
+    batch(
+        test,
+        [
+            "d1a85062-05f8-4bbf-9bf8-ea437629a7db"  // v4
+        ],
+        [
+            "e882f056-1920-11e5-b60b-1697f925ec7b", // v1
+            "1546058f-5a25-3334-85ae-e68f2a44bbaf", // v3
+            "1546058f-5a25-5334-85ae-e68f2a44bbaf"  // v5
+        ],
+        String.isUuid4
+    );
+    batch(
+        test,
+        [
+            "1546058f-5a25-5334-85ae-e68f2a44bbaf"  // v5
+        ],
+        [
+            "e882f056-1920-11e5-b60b-1697f925ec7b", // v1
+            "1546058f-5a25-3334-85ae-e68f2a44bbaf", // v3
+            "d1a85062-05f8-4bbf-9bf8-ea437629a7db"  // v4
+        ],
+        String.isUuid5
+    );
+
+    // Done
+    test.done();
+};
+
 exports.testIsHex = function testIsHex(test) {
 
     // Alias
