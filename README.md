@@ -1,9 +1,12 @@
 
+# Variable Validator (vava)
+
 Simple, clean and efficient variable validator for [node](http://nodejs.org).
 
 [![NPM Version][npm-image]][npm-url]
 [![Build status][travis-image]][travis-url]
 
+## Example usage
 
 Full syntax:
 
@@ -51,33 +54,115 @@ function updateUserName(id, name)
 ## Installation
 
 ```bash
-$ npm install vava
+$ npm install --save vava
 ```  
   
-## Bundled assertions
+# Bundled assertions
+
+All functions in bundled assertions returns null if provided variable satisfies function's validation logic or string with error message. This error message will be exception text when `Check.Is` invoked
+
+
+## Type
+
+Base package with basic assertions rules
+
+### `Type.isNull` & `Type.isNotNull`
+
+### `Type.isBoolean` & `Type.isBool` & `Type.isNotBoolean`
+
+### `Type.isNumber` & `Type.isNotNumber`
+
+### `Type.isInteger` & `Type.isNotInteger`
+
+### `Type.isFloat` & `Type.isNotFloat`
+
+### `Type.isFunction` & `Type.isNotFunction`
+
+### `Type.isArray` & `Type.isNotArray`
+
+### `Type.isNotEmptyArray`
+
+This function returs `null` (which means `true`) if argument is array with length 1 or greater
+
+### `Type.equalsTo(expected)`
+
+Parametrized assertion, than returns `null` (which means `true`) only when validated value has same type and value with expected one.
+
+```js
+Check(x, "x", Check.Type.equalsTo(500)); // Will throw exception on any value except (number) 500
+```
+
+
+## Net
+
+Package with assertion for network purposes
+
+### `Net.isIp` with alias `Net.isIpv6`
+
+Returns `null` (which means `true`) if provided argument is valid [IPv4][ip] or [IPv6][ip] address
+
+### `Net.isIpv4`
   
-* Type.is[Not]Number
-* Type.is[Not]Integer
-* Type.is[Not]Float
-* Type.is[Not]Boolean
-* Type.is[Not]Null
-* Type.is[Not]Function
-* Type.is[Not]Array
-* Type.isNotEmptyArray
-* Net.isIp
-* Net.isIpv4
-* Net.isIpv6
-* String.is[Not]Empty
-* String.isNotEmptyOrWhitespace
-* String.isHexadecimal
-* String.isJson
-* String.isAscii[OrEmpty]
-* String.isMultibyte[OrEmpty]
-* String.withExactLength(length)
-* String.withLength(max[, min])
+Returns `null` (which means `true`) if provided argument is valid [IPv4][ip] address  
+
+## String
+
+Package with string-specific assertions
+
+### `String.isEmpty` & `String.isNotEmpty`
+  
+### `String.isNotEmptyOrWhitespace`
+
+Returns `null` (which means `true`) if provided argument is `string` and contains at least one non-whitespace  character.
+
+### `String.isHexadecimal`
+
+### `String.isJson`
+
+### `String.isAscii`
+
+Returns `null` (which means `true`) if provided argument is `string` with single-byte characters only. 
+Empty string is not valid Ascii string
+
+### `String.isAsciiOrEmpty`
+
+Same as `String.isAscii`, but empty string counts as valid
+
+### `String.isMultibyte`
+
+Returns `null` (which means `true`) if provided argument is `string` with at least one multibyte character.
+Empty string is not valid multibyte string
+
+### `String.isMultibyteOrEmpty`
+
+Same as `String.isMultibyte`, but empty string counts as valid
+
+### `String.isUuid` & `String.isUuid3` & `String.isUuid4` & `String.isUuid5`
+
+Returns `null` (which means `true`) if provided argument is `string` and satisfies rules for [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier)
+
+
+### `String.withExactLength(length)`
+
+Parametrized function, which returns `null` only if provided value is `string` with expected length
+
+```js
+Check(x, "x", String.withExactLength(3));
+```
+  
+###  `String.withLength(max[, min])`
+
+Parametrized function, which returns `null` only if provided value is `string` with expected length
+
+```js
+Check(x, "x", String.withLength(3)); // Any string with length 0, 1, 2, 3 chars
+Check(x, "x", String.withLength(3, 5)); // Any string with length 3, 4, 5 chars
+Check(x, "x", String.withLength(5, 3)); // Any string with length 3, 4, 5 chars
+```
   
   
 [npm-image]: https://img.shields.io/npm/v/vava.svg
 [npm-url]: https://npmjs.org/package/vava
 [travis-image]: https://travis-ci.org/und3rk0re/js-vava.svg
 [travis-url]: https://travis-ci.org/und3rk0re/js-vava
+[ip]: https://en.wikipedia.org/wiki/IP_address
