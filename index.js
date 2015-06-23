@@ -10,5 +10,6 @@ V.IsValid = Check.IsValid;
 V.Type = require('./lib/Type');
 V.Net = require('./lib/Net');
 V.String = require('./lib/String');
+V.CreditCard = require('./lib/CreditCard');
 
 module.exports = V;

@@ -159,10 +159,42 @@ Check(x, "x", String.withLength(3)); // Any string with length 0, 1, 2, 3 chars
 Check(x, "x", String.withLength(3, 5)); // Any string with length 3, 4, 5 chars
 Check(x, "x", String.withLength(5, 3)); // Any string with length 3, 4, 5 chars
 ```
-  
+
+## CreditCard
+
+Contains assertions for credit card validation. Works only on sanitized data, so remove spaces, dashes by yourself
+
+**Known major card vendors**:
+
+* **Visa** - `CreditCard.isVisa`
+* **American Express** - `CreditCard.isAmex`
+* **Mastercard** - `CreditCard.isMastercard`
+* **Maestro** - `CreditCard.isMaestro`
+* **JCB** - `CreditCard.isJcb`
+* **Discover** - `CreditCard.isDiscover`
+
+
+### `CreditCard.isCreditCard`
+
+Returns `null` (which means `true`) if provided argument is `string` and holds credit card number of known vendor
+
+### `CreditCard.isLuhnValid`
+
+Returns `null` (which means `true`) if provided argument is `string` and holds credit card number of known vendor, plus 
+credit card number passes [Luhn][luhn] validation
+
+### `CreditCard.isBin`
+
+Returns `null` (which means `true`) if provided argument holds something similar to BIN
+
+### `CreditCard.isLast4`
+
+Returns `null` (which means `true`) if provided argument holds something similar to last four digits of credit card
+
   
 [npm-image]: https://img.shields.io/npm/v/vava.svg
 [npm-url]: https://npmjs.org/package/vava
 [travis-image]: https://travis-ci.org/und3rk0re/js-vava.svg
 [travis-url]: https://travis-ci.org/und3rk0re/js-vava
 [ip]: https://en.wikipedia.org/wiki/IP_address
+[luhn]: https://en.wikipedia.org/wiki/Luhn_algorithm
