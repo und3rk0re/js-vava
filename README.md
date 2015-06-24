@@ -113,6 +113,11 @@ Returns `null` (which means `true`) if provided argument is valid [IPv4][ip] or 
   
 Returns `null` (which means `true`) if provided argument is valid [IPv4][ip] address  
 
+### `Net.isMacAddress`
+  
+Returns `null` (which means `true`) if provided argument is valid MAC address  
+
+
 ## String
 
 Package with string-specific assertions

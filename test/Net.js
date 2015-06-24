@@ -56,3 +56,17 @@ exports.testIpv6 = function testIpv4(test) {
     // Done
     test.done();
 };
+
+exports.testMac = function testMac(test) {
+
+    // Batch
+    batch(
+        test,
+        ["00:27:0e:2a:b9:Aa", "01-02-03-04-aB-cd"],
+        [true, false, null, "0102-0304-abcd", "01020304abcd", "01.02.03.04.aB.cd", "01 02 03 04 ab cd"],
+        Net.isMacAddress
+    );
+
+    // Done
+    test.done();
+};
