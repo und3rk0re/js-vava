@@ -92,6 +92,14 @@ Parametrized assertion, than returns `null` (which means `true`) only when valid
 Check(x, "x", Check.Type.equalsTo(500)); // Will throw exception on any value except (number) 500
 ```
 
+### `Type.isOneOf(expected)`
+
+Parametrized assertion, than returns `null` (which means `true`) only when validated value presents in list of `expected` values
+
+```js
+Check(x, "x", Check.Type.isOneOf(["Banana", "Orange"]));
+```
+
 
 ## Net
 

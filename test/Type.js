@@ -13,6 +13,16 @@ exports.testEqualsTo = function testEqualsTo(test) {
     test.done();
 };
 
+exports.testIsOneOf = function testIsOneOf(test) {
+
+    // Batch
+    batch(test, [5, 8, false], [6, 7, "5"], Type.isOneOf([5, 8, false]));
+    batch(test, ["5", true], [6, 7, 8, 5, {}], Type.isOneOf(["5", true]));
+
+    // Done
+    test.done();
+};
+
 exports.testNulls = function testNulls(test) {
 
     // Batch
